@@ -14,12 +14,10 @@ class WorldTime{
     //make the request
     String api="http://worldtimeapi.org/api/timezone/$url";
      var response = await http.get(api);
-    //print(data);
     var data = jsonDecode(response.body);
     String datetime= data['datetime'];
     String offset = data['utc_offset'].substring(1,3);
-    //print(datetime);
-    //print(offset);
+   
 
     //create datetime object
     DateTime now = DateTime.parse(datetime);
